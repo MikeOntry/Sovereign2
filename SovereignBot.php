@@ -27,7 +27,7 @@ $myWhois = new WhoisPlugin();
 $myUserInfo = new UserInfoPlugin();
 $myOrders = new OrdersPlugin();
 $mySupply = new SupplyPlugin();
-$testPlugin = new Sovereign($myWhois, $myUserInfo, $myOrders, $mySupply);
+$mySovereign = new Sovereign($myWhois, $myUserInfo, $myOrders, $mySupply);
 
 $reconnect = function ($event) {
     $hostname = $event->getConnection()->getServerHostname();
@@ -52,7 +52,7 @@ $events->addSubscriber(new AutoReconnectPlugin());
 $events->addSubscriber($myWhois);
 $events->addSubscriber($myUserInfo);
 $events->addSubscriber($myOrders);
-$events->addSubscriber($testPlugin);
+$events->addSubscriber($mySovereign);
 $events->addSubscriber($mySupply);
 
 $events->addListener('irc.received.ERROR', $reconnect);
