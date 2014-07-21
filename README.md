@@ -40,6 +40,8 @@ The bot will join the channel given in the message.
 Commands
 ==========
 
+@<orderset> - Show orders in an orderset
+
 @join #channel <optional chan password> - Joins the channel (with password option)
 
 @part #channel - Parts channel and removes from autojoin list
